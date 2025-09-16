@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "Auto Freedium Redirect for Medium",
+  "version": "1.0.0",
+  "description": "Automatically redirects Medium 'Member-only story' articles to freedium.cfd on whitelisted pages.",
+  "icons": {
+    "16": "logoautofreedium.png",
+    "32": "logoautofreedium.png",
+    "48": "logoautofreedium.png",
+    "128": "logoautofreedium.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "logoautofreedium.png",
+      "32": "logoautofreedium.png",
+      "48": "logoautofreedium.png",
+      "128": "logoautofreedium.png"
+    },
+    "default_title": "Auto Freedium Redirect"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://medium.com/*",
+        "http://medium.com/*",
+        "https://*.medium.com/*",
+        "http://*.medium.com/*",
+        "https://infosecwriteups.com/*",
+        "http://infosecwriteups.com/*"
+      ],
+      "js": ["src/content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "host_permissions": [
+    "https://medium.com/*",
+    "http://medium.com/*",
+    "https://*.medium.com/*",
+    "http://*.medium.com/*",
+    "https://infosecwriteups.com/*",
+    "http://infosecwriteups.com/*"
+  ],
+  "permissions": [
+    "storage",
+    "tabs"
+  ]
+}
+
+

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      width: 400px;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      font-size: 14px;
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+    .logo {
+      width: 24px;
+      height: 24px;
+      margin-right: 8px;
+    }
+    .title {
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .section {
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .domain-list {
+      border: 1px solid #e1e5e9;
+      border-radius: 6px;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .domain-item {
+      display: flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-bottom: 1px solid #f1f3f4;
+    }
+    .domain-item:last-child {
+      border-bottom: none;
+    }
+    .domain-text {
+      flex: 1;
+      font-family: monospace;
+      font-size: 13px;
+    }
+    .remove-btn {
+      background: #ff4757;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 4px 8px;
+      font-size: 12px;
+      cursor: pointer;
+    }
+    .remove-btn:hover {
+      background: #ff3742;
+    }
+    .add-section {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .domain-input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #e1e5e9;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+    .add-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 16px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+    .add-btn:hover {
+      background: #0056b3;
+    }
+    .add-btn:disabled {
+      background: #6c757d;
+      cursor: not-allowed;
+    }
+    .status {
+      padding: 8px 12px;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+    .status.success {
+      background: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+    .status.error {
+      background: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+    .help-text {
+      font-size: 12px;
+      color: #6c757d;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <img src="logoautofreedium.png" class="logo" alt="Logo">
+    <div class="title">Auto Freedium Settings</div>
+  </div>
+
+  <div id="status"></div>
+
+  <div class="section">
+    <div class="section-title">Whitelisted Domains</div>
+    <div class="domain-list" id="domainList">
+      <!-- Domains will be loaded here -->
+    </div>
+    <div class="add-section">
+      <input type="text" id="domainInput" class="domain-input" placeholder="e.g., medium.com">
+      <button id="addBtn" class="add-btn">Add</button>
+    </div>
+    <div class="help-text">
+      Add domains where the extension should work. Examples: medium.com, infosecwriteups.com
+    </div>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
