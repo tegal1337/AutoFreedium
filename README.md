@@ -1,4 +1,4 @@
-Auto Freedium Redirect for Medium
+Auto Freedium Redirect for Medium (0-Interaction)
 =================================
 
 Chrome extension (Manifest V3) that automatically redirects Medium "Member-only story" articles to `https://freedium.cfd/<full-original-url>` on whitelisted domains.
@@ -35,5 +35,6 @@ Notes
 -----
 - The script only runs on whitelisted domains declared in `manifest.json`.
 - It does not collect data or modify content, it only redirects when necessary.
+
 
 
